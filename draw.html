@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type = "text/javascript" src = "Circle.js"></script>
+<script type = "text/javascript" src = "Canvas.js"></script>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+	
+	var canvas = document.getElementById('canvas');
+	var cxt = canvas.getContext("2d");
+	cxt.save();
+	var blue = new Circle(250, 100, 'blue');
+	var yellow = new Circle(305, 155, 'yellow');
+	var black = new Circle(360, 100, 'black');
+	var green = new Circle(415, 155, 'green');
+	var red = new Circle(470, 100, 'red');
+	
+	var circles = [blue, yellow, black, green, red];
+	for (var i = 0; i < circles.length ; i++){
+		console.log(circles[i]);
+		circles[i].changeColor(cxt);
+		circles[i].drawCircle(cxt);
+		
+	}
+	console.log(circles);
+	
+	
+	
+	
+}, false);
+
+</script>
+<style>
+	canvas{
+		border: 3px solid DarkGreen;
+		margin: 100px;
+	}
+</style>
+</head>
+<body>
+
+	<canvas width = "700px"height = "300px" id = "canvas"></canvas>
+</body>
+</html>
